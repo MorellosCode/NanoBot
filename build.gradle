@@ -1,0 +1,55 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.7'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'org.jetbrains.kotlin.jvm' version '1.6.20'
+    id 'java'
+}
+
+group = 'com.yoiul'
+version = '1.0'
+sourceCompatibility = JavaVersion.VERSION_17
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    maven {
+        url 'https://maven.aliyun.com/repository/public/'
+    }
+    mavenLocal()
+    mavenCentral()
+}
+ext {
+    hutoolVersion = "5.8.0.M2"
+    miraiVersion = '2.10.1'
+    swaggerVersion = "3.0.0"
+    knife4jVersion = '3.0.3'
+}
+
+dependencies {
+    implementation("cn.hutool:hutool-all:$hutoolVersion")
+    implementation("net.mamoe:mirai-core:$miraiVersion")
+
+    implementation("org.springframework.boot:spring-boot-starter")
+
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
+
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+
+bootJar {
+    manifest {
+        attributes "Implementation-Title": "NanoBot Application",
+                "Implementation-Version": archiveVersion
+    }
+    exclude("**/application-dev.yml")
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

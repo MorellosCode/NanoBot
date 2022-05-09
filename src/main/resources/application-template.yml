@@ -1,0 +1,17 @@
+nano:
+  bot:
+    account: 123 #填入QQ账号
+    password: 123 #填入QQ密码
+    admin: 123 #填入管理员QQ账号
+    protocol: android_phone #登陆协议
+    botLog: true #是否使用NanoBot日志
+    networkLog: true #是否使用NanoBot网络日志
+    head: .
+    name: Nano
+    groups: 4321,1234
+
+logging:
+  level:
+    root: info
+#  file: #使用本地日志，保存在当前用户目录下NanoBot文件夹
+#    name: ${user.home}/NanoBot/nanobot.log
