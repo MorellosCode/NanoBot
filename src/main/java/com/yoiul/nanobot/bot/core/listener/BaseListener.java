@@ -9,6 +9,8 @@ import net.mamoe.mirai.message.data.MessageChain;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.util.ObjectUtils;
 
+import static com.yoiul.nanobot.utils.CommandUtils.IMAGE_HEAD;
+
 /**
  * 基础监听器，所有监听器应当继承此类
  *
@@ -28,6 +30,11 @@ public abstract class BaseListener extends SimpleListenerHost {
         String message = messageChain.contentToString();
         if (ObjectUtils.isEmpty(message)) {
             return true;
+        }
+        for (String image : IMAGE_HEAD) {
+            if (image.equals(message)) {
+                return false;
+            }
         }
         return !message.startsWith(CommandUtils.getCommandHead());
     }

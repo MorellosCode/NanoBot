@@ -8,6 +8,7 @@ import com.yoiul.nanobot.enums.CommandType;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ObjectUtils;
 
 import java.util.Map;
 
@@ -38,11 +39,16 @@ public class BotBaseRegistrar implements ApplicationListener<ContextRefreshedEve
                     NanoCommand nanoCommand = bean.getClass().getAnnotation(NanoCommand.class);
                     String commandKey = nanoCommand.command();
                     CommandType type = nanoCommand.type();
+                    String image = nanoCommand.image();
                     setCommandsMap(command, commandKey, type);
                     // 别名添加到指令集合中
                     String[] commands = nanoCommand.alias();
                     for (String key : commands) {
                         setCommandsMap(command, key, type);
+                    }
+                    // 图片添加到指令集合中
+                    if (!ObjectUtils.isEmpty(image)) {
+                        setCommandsMap(command, image, type);
                     }
                 }
             }
@@ -55,8 +61,8 @@ public class BotBaseRegistrar implements ApplicationListener<ContextRefreshedEve
         }
     }
 
-    private void setCommandsMap(Command command, String commandKey, CommandType type) {
-        switch (type){
+    private void setCommandsMap(Command<?> command, String commandKey, CommandType type) {
+        switch (type) {
             case COMMON -> NanoBot.commonCommands.put(commandKey, command);
             case GROUP -> NanoBot.groupCommands.put(commandKey, command);
             case FRIEND -> NanoBot.friendCommands.put(commandKey, command);

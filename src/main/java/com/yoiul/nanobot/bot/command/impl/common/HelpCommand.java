@@ -13,7 +13,7 @@ import net.mamoe.mirai.event.events.MessageEvent;
  * @since 2022/5/6
  */
 @Slf4j
-@NanoCommand(type = CommandType.COMMON, command = "帮助", alias = {"help", "HELP"})
+@NanoCommand(type = CommandType.COMMON, command = "帮助", alias = {"help"})
 public class HelpCommand extends CommonMessageCommand {
 
     @Override

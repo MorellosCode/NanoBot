@@ -15,7 +15,7 @@ import java.util.Map;
 @Slf4j
 public class CommandUtils {
 
-    private final static String IMAGE_HEAD = "[图片]";
+    public final static String[] IMAGE_HEAD = {"[动画表情]", "图片"};
 
     /**
      * 获取指令头
@@ -44,8 +44,10 @@ public class CommandUtils {
      */
     public static String getCommandKey(MessageChain messageChain) {
         String message = messageChain.contentToString();
-        if (IMAGE_HEAD.equals(message)) {
-            return messageChain.serializeToMiraiCode().toLowerCase();
+        for (String image : IMAGE_HEAD) {
+            if (image.equals(message)) {
+                return messageChain.serializeToMiraiCode();
+            }
         }
         String headMsg = StrUtil.split(message, " ", 0, true, true).get(0);
         String commandHead = getCommandHead();
