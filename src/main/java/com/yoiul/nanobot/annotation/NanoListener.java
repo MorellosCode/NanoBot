@@ -15,5 +15,4 @@ import java.lang.annotation.*;
 @Inherited
 @Component
 public @interface NanoListener {
-
 }

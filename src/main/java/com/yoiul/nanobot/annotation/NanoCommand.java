@@ -16,12 +16,21 @@ import java.lang.annotation.*;
 @Inherited
 @Component
 public @interface NanoCommand {
-
+    /**
+     * 指令类型
+     */
     CommandType type();
-
+    /**
+     * 指令名
+     */
     String command();
-
+    /**
+     * 别名指令数组
+     */
     String[] alias() default {};
 
+    /**
+     * 图片指令，例：[mirai:image:{xxx}.jpg]
+     */
     String image() default "";
 }
