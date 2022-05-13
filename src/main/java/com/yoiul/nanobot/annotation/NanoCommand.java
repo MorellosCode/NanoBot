@@ -11,7 +11,7 @@ import java.lang.annotation.*;
  * @author Robin Lang
  * @since 2022/5/6
  */
-@Target({ElementType.TYPE, ElementType.METHOD})
+@Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 @Component
