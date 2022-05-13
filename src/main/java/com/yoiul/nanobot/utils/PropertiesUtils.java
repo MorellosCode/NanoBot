@@ -15,11 +15,11 @@ import java.util.stream.Collectors;
 @Component
 public class PropertiesUtils {
 
-    @Value("${nano.bot.name}")
+    @Value("${nano.bot.name:Nano}")
     private String name;
-    @Value("${nano.bot.head}")
+    @Value("${nano.bot.head:.}")
     private String head;
-    @Value("${nano.bot.groups}")
+    @Value("${nano.bot.groups:123}")
     private String groups;
 
     private static String botName;
