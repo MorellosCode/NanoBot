@@ -1,7 +1,7 @@
 package com.yoiul.nanobot.bot.core.infrastructure;
 
 import com.yoiul.nanobot.bot.command.Command;
-import com.yoiul.nanobot.bot.core.listener.BaseListener;
+import com.yoiul.nanobot.bot.listener.BaseListener;
 import com.yoiul.nanobot.bot.core.logger.NanoBotLogger;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;

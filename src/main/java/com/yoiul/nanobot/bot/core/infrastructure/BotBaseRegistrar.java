@@ -3,7 +3,7 @@ package com.yoiul.nanobot.bot.core.infrastructure;
 import com.yoiul.nanobot.annotation.NanoCommand;
 import com.yoiul.nanobot.annotation.NanoListener;
 import com.yoiul.nanobot.bot.command.Command;
-import com.yoiul.nanobot.bot.core.listener.BaseListener;
+import com.yoiul.nanobot.bot.listener.BaseListener;
 import com.yoiul.nanobot.enums.CommandType;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;

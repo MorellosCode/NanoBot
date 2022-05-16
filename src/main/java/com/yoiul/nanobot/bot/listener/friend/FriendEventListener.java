@@ -1,9 +1,9 @@
-package com.yoiul.nanobot.bot.core.listener.friend;
+package com.yoiul.nanobot.bot.listener.friend;
 
 import cn.hutool.core.util.StrUtil;
 import com.yoiul.nanobot.annotation.NanoListener;
 import com.yoiul.nanobot.bot.core.infrastructure.NanoBotProperties;
-import com.yoiul.nanobot.bot.core.listener.BaseListener;
+import com.yoiul.nanobot.bot.listener.BaseListener;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import net.mamoe.mirai.event.EventHandler;

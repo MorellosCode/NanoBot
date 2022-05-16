@@ -1,9 +1,9 @@
-package com.yoiul.nanobot.bot.core.listener.group;
+package com.yoiul.nanobot.bot.listener.group;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import com.yoiul.nanobot.annotation.NanoListener;
-import com.yoiul.nanobot.bot.core.listener.BaseListener;
+import com.yoiul.nanobot.bot.listener.BaseListener;
 import com.yoiul.nanobot.exception.NanoException;
 import com.yoiul.nanobot.utils.BotUtils;
 import lombok.SneakyThrows;

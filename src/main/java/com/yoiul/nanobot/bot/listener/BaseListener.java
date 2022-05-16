@@ -1,4 +1,4 @@
-package com.yoiul.nanobot.bot.core.listener;
+package com.yoiul.nanobot.bot.listener;
 
 import com.yoiul.nanobot.utils.CommandUtils;
 import kotlin.coroutines.CoroutineContext;

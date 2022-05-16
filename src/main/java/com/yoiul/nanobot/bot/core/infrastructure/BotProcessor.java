@@ -1,6 +1,6 @@
 package com.yoiul.nanobot.bot.core.infrastructure;
 
-import com.yoiul.nanobot.bot.core.listener.BaseListener;
+import com.yoiul.nanobot.bot.listener.BaseListener;
 import lombok.extern.slf4j.Slf4j;
 import net.mamoe.mirai.Bot;
 import org.jetbrains.annotations.NotNull;
