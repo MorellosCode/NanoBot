@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 import java.util.Map;
 
 /**
- * 通用指令选择器
+ * 临时群指令选择器
  *
  * @author Robin Lang
  * @since 2022/6/30

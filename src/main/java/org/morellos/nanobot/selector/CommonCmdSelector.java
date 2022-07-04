@@ -21,14 +21,6 @@ public class CommonCmdSelector {
 
     @Resource
     private Map<String, CommonMessageCommand> commonCmdMap;
-//    @Resource
-//    private Map<String, FriendMessageCommand> friendCmdMap;
-//    @Resource
-//    private Map<String, GroupMessageCommand> groupCmdMap;
-//    @Resource
-//    private Map<String, GroupTempMessageCommand> groupTempCmdMap;
-//    @Resource
-//    private Map<String, StrangerMessageCommand> strangerCmdMap;
 
     public Command getCommand(MessageChain messageChain) {
         String key = CommandUtils.getCommandKey(messageChain);

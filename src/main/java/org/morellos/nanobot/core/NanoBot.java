@@ -1,17 +1,17 @@
 package org.morellos.nanobot.core;
 
-import org.morellos.nanobot.listener.BaseListener;
-import org.morellos.nanobot.logger.NanoBotLogger;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import net.mamoe.mirai.Bot;
 import net.mamoe.mirai.BotFactory;
 import net.mamoe.mirai.utils.BotConfiguration;
+import org.morellos.nanobot.logger.NanoBotLogger;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -26,29 +26,15 @@ import java.util.*;
 public class NanoBot implements InitializingBean {
 
     /**
-     * 机器人
-     */
-    @Getter
-    private Bot bot;
-
-    /**
      * 指令别名映射集合
      */
     public static Map<String, String> cmdMapping = new HashMap<>();
 
-//    /**
-//     * 指令集合
-//     */
-//    public static Map<String, Command> commonCommands = new HashMap<>();
-//    public static Map<String, Command> friendCommands = new HashMap<>();
-//    public static Map<String, Command> groupCommands = new HashMap<>();
-//    public static Map<String, Command> groupTempCommands = new HashMap<>();
-//    public static Map<String, Command> strangerCommands = new HashMap<>();
-
     /**
-     * 监听列表
+     * 机器人
      */
-    public static List<BaseListener> listeners = new ArrayList<>();
+    @Getter
+    private Bot bot;
 
 
     private final NanoBotProperties nanoBotProperties;
@@ -57,7 +43,11 @@ public class NanoBot implements InitializingBean {
         this.nanoBotProperties = nanoBotProperties;
     }
 
-
+    /**
+     * 添加指令别名映射
+     * @param command 映射目标命令bean名称
+     * @param alias 指令别名列表
+     */
     public static void addCommandMapping(String command, String... alias) {
         for (String alia : alias) {
             cmdMapping.put(alia, command);

@@ -35,6 +35,7 @@ public class BotProcessor implements ApplicationListener<ApplicationReadyEvent> 
         for (BaseListener listener : listenerList) {
             bot.getEventChannel().registerListenerHost(listener);
         }
+        // 机器人登录
         bot.login();
         log.info("NanoBot initialization complete.");
     }
