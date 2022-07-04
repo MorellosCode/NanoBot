@@ -23,8 +23,8 @@ repositories {
     mavenCentral()
 }
 ext {
-    hutoolVersion = "5.8.0.M2"
-    miraiVersion = '2.10.1'
+    hutoolVersion = '5.8.3'
+    miraiVersion = '2.12.0'
     swaggerVersion = "3.0.0"
     knife4jVersion = '3.0.3'
 }
