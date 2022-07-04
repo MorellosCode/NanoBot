@@ -1,6 +1,6 @@
 package org.morellos.nanobot.utils;
 
-import org.morellos.nanobot.bot.command.Command;
+import org.morellos.nanobot.command.Command;
 import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
 import net.mamoe.mirai.message.data.MessageChain;
@@ -54,6 +54,6 @@ public class CommandUtils {
         if (ObjectUtils.isEmpty(commandHead) && !headMsg.startsWith(commandHead)) {
             return "";
         }
-        return headMsg.replaceFirst(commandHead, "");
+        return StrUtil.removePrefix(headMsg,commandHead);
     }
 }

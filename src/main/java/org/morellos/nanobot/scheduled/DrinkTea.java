@@ -1,6 +1,6 @@
 package org.morellos.nanobot.scheduled;
 
-import org.morellos.nanobot.bot.core.infrastructure.NanoBot;
+import org.morellos.nanobot.core.NanoBot;
 import org.morellos.nanobot.exception.NanoException;
 import org.morellos.nanobot.utils.BotUtils;
 import lombok.SneakyThrows;
